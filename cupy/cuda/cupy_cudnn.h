@@ -876,6 +876,69 @@ cudnnStatus_t cudnnRNNBackwardWeightsEx(...) {
 
 #endif // defined(CUPY_NO_CUDA) || (CUDNN_VERSION < 7200)
 
+#if defined(CUPY_NO_CUDA) || (CUDNN_VERSION < 7500)
+
+typedef enum {} cudnnAttnQueryMap_t;
+typedef enum {} cudnnMultiHeadAttnWeightKind_t;
+typedef enum {} cudnnSeqDataAxis_t;
+typedef enum {} cudnnWgradMode_t;
+typedef void* cudnnAttnDescriptor_t;
+typedef void* cudnnSeqDataDescriptor_t;
+
+cudnnStatus_t cudnnCreateAttnDescriptor(...) {
+    return CUDNN_STATUS_SUCCESS;
+}
+
+cudnnStatus_t cudnnDestroyAttnDescriptor(...) {
+    return CUDNN_STATUS_SUCCESS;
+}
+
+cudnnStatus_t cudnnGetAttnDescriptor(...) {
+    return CUDNN_STATUS_SUCCESS;
+}
+
+cudnnStatus_t cudnnGetMultiHeadAttnBuffers(...) {
+    return CUDNN_STATUS_SUCCESS;
+}
+
+cudnnStatus_t cudnnGetMultiHeadAttnWeights(...) {
+    return CUDNN_STATUS_SUCCESS;
+}
+
+cudnnStatus_t cudnnMultiHeadAttnBackwardData(...) {
+    return CUDNN_STATUS_SUCCESS;
+}
+
+cudnnStatus_t cudnnMultiHeadAttnBackwardWeights(...) {
+    return CUDNN_STATUS_SUCCESS;
+}
+
+cudnnStatus_t cudnnMultiHeadAttnForward(...) {
+    return CUDNN_STATUS_SUCCESS;
+}
+
+cudnnStatus_t cudnnSetAttnDescriptor(...) {
+    return CUDNN_STATUS_SUCCESS;
+}
+
+cudnnStatus_t cudnnCreateSeqDataDescriptor(...) {
+    return CUDNN_STATUS_SUCCESS;
+}
+
+cudnnStatus_t cudnnDestroySeqDataDescriptor(...) {
+    return CUDNN_STATUS_SUCCESS;
+}
+
+cudnnStatus_t cudnnGetSeqDataDescriptor(...) {
+    return CUDNN_STATUS_SUCCESS;
+}
+
+cudnnStatus_t cudnnSetSeqDataDescriptor(...) {
+    return CUDNN_STATUS_SUCCESS;
+}
+
+#endif // defined(CUPY_NO_CUDA) || (CUDNN_VERSION < 7500)
+
 #if !defined(CUPY_NO_CUDA) && (CUDNN_VERSION < 8000)
 // TODO: check function names when cuDNN 8 is released.
 
